@@ -5,39 +5,38 @@ let arr = [
 ];
 
 function PrintDeveloperbyMap() {
-  arr.map(employee => {
-    if (employee.profession === "developer") {
-      console.log(employee);
-    }
+  arr.map(emp => {
+    if (emp.profession === "developer") console.log(emp);
   });
 }
 
 function PrintDeveloperbyForEach() {
-  arr.forEach(employee => {
-    if (employee.profession === "developer") {
-      console.log(employee);
-    }
+  arr.forEach(emp => {
+    if (emp.profession === "developer") console.log(emp);
   });
 }
 
 function addData() {
-  let newEmployee = { id: 4, name: "susan", age: "20", profession: "intern" };
-  arr.push(newEmployee);
+  const newEmp = { id: 4, name: "susan", age: "20", profession: "intern" };
+  arr.push(newEmp);
   console.log(arr);
 }
 
 function removeAdmin() {
-  arr = arr.filter(employee => employee.profession !== "admin");
+
+  const filtered = arr.filter(emp => emp.profession !== "admin");
+  arr.length = 0;       
+  arr.push(...filtered);  
   console.log(arr);
 }
 
 function ConcatinateArray() {
-  let newArray = [
+  const newArray = [
     { id: 5, name: "mike", age: "22", profession: "designer" },
     { id: 6, name: "sara", age: "24", profession: "manager" },
     { id: 7, name: "tom", age: "21", profession: "tester" }
   ];
 
-  let combinedArray = arr.concat(newArray);
+  const combinedArray = arr.concat(newArray);
   console.log(combinedArray);
 }
